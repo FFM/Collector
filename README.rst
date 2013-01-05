@@ -10,6 +10,7 @@ Requirements
 * python-zmq : pip install pyzmq==2.2.0 (or use local version> 2.2.0)
 * pycryptopan: pip install pycrypto pycryptopan
 * pymongo: pip install pymongo==1.7
+* importlib - for python < 2.7
 * Mongodb as backend
 
 also can be installed as pip install -r requirements.txt 

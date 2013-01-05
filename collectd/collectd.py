@@ -1,6 +1,7 @@
 import zmq
 from pymongo import Connection
 import json
+import importlib
 
 class Collectd:
   
@@ -10,7 +11,7 @@ class Collectd:
     self.db=self.connection.statistics
     self.statistics=self.db.statistics
     self.run=True
-    self.middleware=[__import__(m) for m in
+    self.middleware=[importlib.import_module(m) for m in
     self.config.collectd_middleware]
 
   def collect(self):

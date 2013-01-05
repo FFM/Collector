@@ -13,7 +13,7 @@ except ImportError:
 import re
 
 def process(message):
-  ips=re.findall("([0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})",message)
+  ips=re.findall("([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})",message)
   cp=CryptoPan(anonymizeseed)
   ips=((ip,cp.anonymize(ip)) for ip in ips)
   return reduce(lambda x,y: re.sub(y[0],y[1],x), ips,message)
