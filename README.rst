@@ -21,6 +21,7 @@ Principles
 ----------
 
 The collector has three different elements:
+
 * A Collecting daemon
 * A Query daemon
 * A python module to write statistics easily
@@ -30,12 +31,12 @@ _________________
 
 The collecting daemon opens a zmq pull socket and listens to any collecting
 device. JSON is used as message passing protocol... Entries generally
-consist of:
+consist of::
 
-{"timestamp": unix timestamp,
- "<object>": "<objectid>",
- "test": "<test>",
- "data": {datastructure}}
+  {"timestamp": unix timestamp,
+  "<object>": "<objectid>",
+  "test": "<test>",
+  "data": {datastructure}}
 
 <object> is in "node","device","interface","address" where each has it's
 own <objectid>. 
