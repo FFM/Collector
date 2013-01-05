@@ -23,7 +23,11 @@ class Collectd:
     while self.run:
       m=receiver.recv()
       m=reduce(lambda x,y: y.process(x),self.middleware,m)
-      self.statistics.insert(json.loads(m))
+      try:
+        self.statistics.insert(json.loads(m))
+      except ValueError:
+        pass
+        """ Ignore non parsing messages """
 
 if __name__=="__main__":
   import settings
