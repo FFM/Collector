@@ -1,4 +1,4 @@
-import collectd.middleware.anonymize
+#import collectd.middleware.anonymize
 #collector configuration
 
 # database
@@ -11,4 +11,8 @@ dbport=27017
 listen="127.0.0.1"
 port=25500
 
-collectd_middleware=[collectd.middleware.anonymize]
+collectd_middleware=['collectd.middleware.anonymize']
+
+# anonymize middleware
+
+anonymizeseed="".join((chr(x) for x in range(0,32)))

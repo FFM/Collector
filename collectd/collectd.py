@@ -10,6 +10,8 @@ class Collectd:
     self.db=self.connection.statistics
     self.statistics=self.db.statistics
     self.run=True
+    self.middleware=[__import__(m) for m in
+    self.config.collectd_middleware]
 
   def collect(self):
     context=zmq.Context()
@@ -19,7 +21,7 @@ class Collectd:
 
     while self.run:
       m=receiver.recv()
-      m=reduce(lambda x,y: y.process(x),self.config.collectd_middleware,m)
+      m=reduce(lambda x,y: y.process(x),self.middleware,m)
       self.statistics.insert(json.loads(m))
 
 if __name__=="__main__":
