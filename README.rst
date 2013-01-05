@@ -59,4 +59,4 @@ _______________________
 A statistics write module to easily write statistics, uses zmq push to
 connect to the collector and implements message passing and serialization..
 
-
+It lives on http://github.com/FFM/Collectclient

@@ -9,7 +9,14 @@ def cold():
   if not os.fork():
     c.collect()
 
+def rsvr():
+  """ Runs the development server """
+  sys.argv.pop()
+  import api.api
+  api.api.do()
+
 commands={"collectd":cold, 
+  "devserver":rsvr,
   }
 
 if __name__=="__main__":
