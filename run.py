@@ -38,7 +38,7 @@ if __name__=="__main__":
   except IndexError:
     cmd=""
   if cmd not in commands.keys():
-    print """Collecd management console.... 
+    print """Collectd management console.... 
     Usage: python run.py command"""
     print """Known commands: """
     for (k,v) in commands.items():

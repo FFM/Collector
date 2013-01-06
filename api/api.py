@@ -23,7 +23,7 @@ class index:
           yield(a.pop(0),a.pop(0))
         except IndexError:
           raise StopIteration()
-    if i>2:      
+    if len(i)>2:      
       query=dict([a for a in tt(i)])     
       result=[x for x in statistics.find(query)]
       for r in result:  
