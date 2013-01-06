@@ -10,7 +10,7 @@ db=Connection(settings.dbhost,settings.dbport).statistics
 statistics=db.statistics
 
 urls = (
-  '/(.*)','index'
+  '/api/(.*)','index'
     )
 
 class index:
