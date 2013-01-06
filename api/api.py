@@ -33,14 +33,17 @@ class index:
       return json.dumps({})
 
 
+app=web.application(urls,globals())
+
 def do():
-  app=web.application(urls,globals())
   app.run()
 
 def fcgi():
   import os
   if not os.fork():
-    web.wsgi.runfcgi(do,(settings.fcgihost,settings.fcgiport))
+    web.wsgi.runwsgi = lambda func, addr=None: web.wsgi.runfcgi(func, addr)
+    app.run()
+    
 
 if __name__=="__main__":
   do()
