@@ -6,8 +6,14 @@ def cold():
   """Starts the Collectd"""
   from collectd.collectd import Collectd
   c=Collectd(settings)
-  if not os.fork():
+  pid=os.fork()
+  if not pid:
     c.collect()
+  else:
+    if len(sys.argv)>2:
+      f=open(sys.argv[2],"w")
+      f.write("%s"%pid)
+      f.close()
 
 def rsvr():
   """ Runs the development server """

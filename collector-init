@@ -1,0 +1,35 @@
+#!/bin/bash
+
+HOST=127.0.0.1
+PORT=3331
+FCGIPID=/home/mihi/Collector/fcgi.pid
+COLLECTORPID=/home/mihi/Collector/collectd.pid
+DIR=/home/mihi/Collector
+
+
+case "$1" in
+  start)
+    echo -n "Starting API:"
+    spawn-fcgi -d $DIR -a $HOST -p $PORT -P $FCGIPID -- ./run.py fastcgi
+    echo "done"
+    echo -n "Starting Collector:"
+    cd $DIR
+    ./run.py collectd $COLLECTORPID
+    echo "done"
+    ;;
+  stop)
+    echo -n "Stopping API:"
+    kill `cat $FCGIPID`
+    echo "done"
+    echo -n "Stopping Collector:"
+    kill `cat $COLLECTORPID`
+    echo "done"
+    ;;
+
+  restart)
+    $0 stop
+    $0 start
+    ;;
+esac
+
+exit 0
