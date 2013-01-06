@@ -16,3 +16,8 @@ collectd_middleware=['collectd.middleware.anonymize']
 # anonymize middleware
 
 anonymizeseed="".join((chr(x) for x in range(0,32)))
+
+# FCGI settings for API
+
+fcgihost="127.0.0.1"
+fcgiport=3331

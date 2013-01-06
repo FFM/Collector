@@ -37,6 +37,11 @@ def do():
   app=web.application(urls,globals())
   app.run()
 
+def fcgi():
+  import os
+  if not os.fork():
+    web.wsgi.runfcgi(do,(settings.fcgihost,settings.fcgiport))
+
 if __name__=="__main__":
   do()
 

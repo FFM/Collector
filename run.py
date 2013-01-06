@@ -15,8 +15,15 @@ def rsvr():
   import api.api
   api.api.do()
 
+def fcgi():
+  """ Starts the FastCGI server """
+  sys.argv.pop()
+  import api.api
+  api.api.fcgi()
+
 commands={"collectd":cold, 
   "devserver":rsvr,
+  "fastcgi":fcgi,
   }
 
 if __name__=="__main__":
