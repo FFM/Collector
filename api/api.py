@@ -39,10 +39,8 @@ def do():
   app.run()
 
 def fcgi():
-  import os
-  if not os.fork():
-    web.wsgi.runwsgi = lambda func, addr=None: web.wsgi.runfcgi(func, addr)
-    app.run()
+  web.wsgi.runwsgi = lambda func, addr=None: web.wsgi.runfcgi(func, addr)
+  app.run()
     
 
 if __name__=="__main__":
