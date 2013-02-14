@@ -29,6 +29,9 @@ The collector has three different elements:
 * A Query daemon
 * A python module to write statistics easily `Collectclient`_
 
+.. _Collector: https://github.com/FFM/Collector
+.. _Collectclient: https://github.com/FFM/Collectclient
+
 Collecting daemon
 _________________
 
