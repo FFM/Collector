@@ -25,9 +25,9 @@ Principles
 
 The collector has three different elements:
 
-* A Collecting daemon `Collector`
+* A Collecting daemon `Collector`_
 * A Query daemon
-* A python module to write statistics easily `Collectclient`
+* A python module to write statistics easily `Collectclient`_
 
 Collecting daemon
 _________________
