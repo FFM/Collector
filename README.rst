@@ -41,7 +41,7 @@ consist of::
   "test": "<test>",
   "data": {datastructure}}
 
-<object> is in "node","device","interface","address" where each has it's
+<object> is in "node","device","interface","address" where each has its
 own <objectid>. 
 
 test describes the tests done, data is the data object for the test - as
