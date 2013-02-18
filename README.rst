@@ -25,9 +25,12 @@ Principles
 
 The collector has three different elements:
 
-* A Collecting daemon
+* A Collecting daemon `Collector`_
 * A Query daemon
-* A python module to write statistics easily
+* A python module to write statistics easily `Collectclient`_
+
+.. _Collector: https://github.com/FFM/Collector
+.. _Collectclient: https://github.com/FFM/Collectclient
 
 Collecting daemon
 _________________
@@ -41,7 +44,7 @@ consist of::
   "test": "<test>",
   "data": {datastructure}}
 
-<object> is in "node","device","interface","address" where each has it's
+<object> is in "node","device","interface","address" where each has its
 own <objectid>. 
 
 test describes the tests done, data is the data object for the test - as
