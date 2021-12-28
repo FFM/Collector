@@ -1,5 +1,5 @@
 flup==1.0.2
-pycrypto==2.6
+pycrypto==2.6.2
 pycryptopan==0.01
 pymongo==1.7
 pyzmq==2.2.0
